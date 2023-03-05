@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="Shopwise ecommerce store"
+      content="Our online store has many different types of great products for sale, and we make it simple to buy them with an easy and simple purchasing process."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Shopwise</title>
+  </head>
+  <body>
+    <!-- Start Header -->
+    <header id="main-header">
+      <!-- Navbar -->
+      <nav id="navbar">
+        <div class="container">
+          <div class="navbar-search">
+            <input
+              type="search"
+              name="search"
+              id="search"
+              placeholder="search for products"
+            />
+          </div>
+          <h1 class="navbar-brand"><a href="./main.html">Shopwise</a></h1>
+          <div class="navbar-cart">
+            <img src="./assests/images/cart.png" alt="shopping cart icon" />
+            <div id="cart-counter">0</div>
+            <div>cart</div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- End Header -->
+
+    <!-- Start Showcase -->
+    <section id="showcase">
+      <div class="overlay">
+        <p>SHOP ANYTIME & ANYWHERE</p>
+        <p>WITH OUR ONLINE STORE</p>
+      </div>
+    </section>
+    <!-- End Showcase -->
+
+    <!-- Start Products -->
+    <seciton id="products"></seciton>
+    <!-- End Products -->
+
+    <!-- Overlay -->
+    <div class="page-overlay"></div>
+
+    <!-- Cart Dropdown -->
+    <div class="cart-dropdown">
+      <div class="cart-title">
+        <h3>My Cart</h3>
+        <button class="close-btn">
+          <img src="./assests/images/xmark.png" alt="xmark - close button" />
+        </button>
+      </div>
+      <div class="line"></div>
+      <div class="cart-products">
+        <div class="product">
+          <div class="product-image">
+            <img src="./assests/images/showcase.jpg" alt="product image" />
+          </div>
+
+          <div class="product-proceed">
+            <div class="product-info">
+              <h3 class="product-name">Product Name</h3>
+              <p class="product-price">20$</p>
+            </div>
+            <div class="product-purchase">
+              <button class="purchase-btn">$</button>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="product-image">
+            <img src="./assests/images/showcase.jpg" alt="product image" />
+          </div>
+
+          <div class="product-proceed">
+            <div class="product-info">
+              <h3 class="product-name">Product Name</h3>
+              <p class="product-price">20$</p>
+            </div>
+            <div class="product-purchase">
+              <button class="purchase-btn">$</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
