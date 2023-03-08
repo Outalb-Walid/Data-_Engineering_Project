@@ -41,10 +41,6 @@ a {
   transition: 0.3s ease-in;
   opacity: 0;
   position: fixed;
-  /* top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0; */
   inset: 0;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1001;
@@ -62,7 +58,6 @@ a {
   position: absolute;
   top: 0;
   right: 0;
-  /* width: 80vw; */
   background-color: #fff;
   box-shadow: 1px 0px 3px #666;
   z-index: 1001;
@@ -92,6 +87,35 @@ a {
   font-family: 'Montserrat', sans-serif;
   font-size: 2rem;
   font-weight: 500;
+}
+
+.cart-dropdown .clear-cart {
+  cursor: pointer;
+  transition: 0.2s ease-in;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #000;
+  border-radius: 100vmax;
+  padding: 10px 18px;
+  margin-right: 50px;
+}
+
+.cart-dropdown .clear-cart:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.cart-dropdown .clear-cart:focus {
+  outline: none;
+}
+
+@media (width<=687px) {
+  .cart-dropdown .clear-cart {
+    font-size: 0.9rem;
+  }
 }
 
 .cart-dropdown .cart-title button.close-btn {
@@ -128,12 +152,6 @@ a {
   grid-auto-flow: column;
 }
 
-/* @media (width <= 560px) {
-  .cart-dropdown .cart-products {
-    grid-template-columns: 100%;
-  }
-} */
-
 @media (width <=720px) {
   .cart-dropdown .cart-products {
     grid-template-columns: 1fr;
@@ -144,11 +162,17 @@ a {
 
 /* If the cart is empty, show the 'empty-cart' div */
 .cart-products .empty-cart {
-  width: 100vmax;
+  width: 100vw;
   text-align: center;
   margin-top: 20px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 2.2rem;
+  font-size: 2.3rem;
+}
+
+@media (width <= 687px) {
+  .cart-products .empty-cart {
+    font-size: 1.5rem;
+  }
 }
 
 .cart-dropdown .cart-products .product {
@@ -462,10 +486,12 @@ a {
   color: green;
   font-size: 1.5rem;
 }
-.quick-view .quick-view-proceed .quick-view-add #amount {
-  width: 100%;
+.quick-view .quick-view-proceed .quick-view-add #quantity {
+  align-self: center;
+  max-width: 100px;
   border: 1px solid #999;
-  padding: 3px;
+  padding: 5px 0;
+  font-size: 1.1rem;
   text-align: center;
   border-radius: 5px;
 }
@@ -473,15 +499,15 @@ a {
 .quick-view
   .quick-view-proceed
   .quick-view-add
-  #amount::-webkit-inner-spin-button,
+  #quantity::-webkit-inner-spin-button,
 .quick-view
   .quick-view-proceed
   .quick-view-add
-  #amount::-webkit-outer-spin-button {
+  #quantity::-webkit-outer-spin-button {
   appearance: none;
 }
 
-.quick-view .quick-view-proceed .quick-view-add #amount:focus {
+.quick-view .quick-view-proceed .quick-view-add #quantity:focus {
   outline: none;
 }
 
@@ -503,10 +529,25 @@ a {
   background-color: #000;
   color: #fff;
 }
+
+.quick-view .quick-view-proceed .quick-view-add #quick-view-total {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 2.1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #333;
+}
+
+.quick-view .quick-view-proceed .quick-view-add #quick-view-total span {
+  color: green;
+  font-size: 1.5rem;
+}
 /* End Quick View Model */
 
 .product-msg {
-  transition: 0.2s ease-in-out;
+  transition: 0.2s linear;
   position: fixed;
   top: 0;
   left: 50%;
@@ -519,10 +560,6 @@ a {
   padding: 10px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-}
-
-.product-msg:empty {
-  display: none;
 }
 
 .product-msg.show-error {
@@ -557,33 +594,6 @@ a {
   justify-content: space-between;
   align-items: center;
 }
-/* !!!! */
-/* Navbar Search
-@media (max-width: 768px) {
-  #navbar .container .navbar-search {
-    display: none;
-  }
-}
-
-#navbar .container .navbar-search > #search {
-  font-family: 'Montserrat', sans-serif;
-  transition: 0.2s ease-out;
-  border-radius: 12px;
-  border: 1px solid #999;
-  font-size: 1rem;
-  padding: 7px;
-  padding-left: 10px;
-}
-
-#navbar .container .navbar-search > #search::-webkit-search-cancel-button {
-  appearance: none;
-}
-
-#navbar .container .navbar-search > #search:focus {
-  border-bottom: 1.5px solid #333;
-  outline: none;
-} */
-/* !!!! */
 
 /* Navbar Brand */
 #navbar .container > .navbar-brand {
@@ -647,7 +657,6 @@ a {
 #showcase {
   position: relative;
   color: #fff;
-  width: 100vw;
   min-height: 400px;
   background: url(./assests/images/showcase.jpg) no-repeat center center/cover;
 }

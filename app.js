@@ -1,4 +1,10 @@
 //* Start Reusable Functions
+// This code reloads the page
+function reloadPage(time) {
+  setTimeout(() => {
+    location.reload();
+  }, time);
+}
 // This function opens the cart side dropdown menu
 function openDropdown(dropdown, overlay, dropdownClass, overlayClass) {
   dropdown.style.display = 'block';
@@ -49,6 +55,8 @@ function changeProductStatus(productName) {
 function displayCartProducts() {
   const cartProducts = JSON.parse(localStorage.getItem('cartProducts'));
   const cartSection = document.querySelector('.cart-products');
+
+  clearCart();
   if (cartProducts.length) {
     cartProducts.forEach((product) => {
       cartSection.innerHTML += `
@@ -62,11 +70,11 @@ function displayCartProducts() {
                 <p class="product-info-price">
                   Price: <span id="price">$${product.price}</span>
                 </p>
-                <p class="product-info-amount">
-                  Amount: <span id="amount">${product.amount}</span>
+                <p class="product-info-quantity">
+                  Quantity: <span id="quantity">${product.quantity}</span>
                 </p>
                 <p class="product-info-total">
-                  Total: <span id="total">$${product.total}</span>
+                  Total: <span id="total">$${Math.round(product.total)}</span>
                 </p>
               </div>
               <div class="product-purchase">
@@ -77,6 +85,7 @@ function displayCartProducts() {
           </div>
       `;
     });
+    cartButtons();
   } else {
     cartSection.innerHTML = `<div class='empty-cart'>Your Cart Is Empty!</div>`;
   }
@@ -95,7 +104,7 @@ function checkInStorage(name) {
   return checked;
 }
 
-//*** Add product to the local storage
+// Add product to the local storage
 function addToStorage(product) {
   const cartStorage = JSON.parse(localStorage.getItem('cartProducts'));
   cartStorage.push(product);
@@ -107,15 +116,16 @@ function addToStorage(product) {
 // show message
 function showMsg(msg, msgClass) {
   const message = document.querySelector('.product-msg');
-  message.innerHTML = msg;
+  message.style.display = 'block';
   message.classList.add(msgClass);
+  message.innerHTML = msg;
   setTimeout(() => {
     message.classList.remove(msgClass);
   }, 3000);
 }
 
 // This code removes the product from the cart
-function removeFromCart(name) {
+function removeFromCart(name, msg, msgClass) {
   const cartProducts = JSON.parse(localStorage.getItem('cartProducts'));
 
   const newProducts = cartProducts.filter((product) => {
@@ -123,7 +133,7 @@ function removeFromCart(name) {
   });
   localStorage.setItem('cartProducts', JSON.stringify(newProducts));
   updateProducts(name, false);
-  showMsg('removing the product...', 'show-error');
+  showMsg(msg, msgClass);
 }
 
 function switchBtnContent(btn) {
@@ -155,7 +165,7 @@ function addToCart() {
         name,
         price,
         image,
-        amount: 1,
+        quantity: 1,
         total: price,
       };
       if (!checkInStorage(productCart.name)) {
@@ -182,13 +192,143 @@ function removeFromStorage() {
     btn.addEventListener('click', (e) => {
       const productTitle =
         e.target.parentElement.parentElement.firstElementChild.textContent;
-      console.log(productTitle);
       switchBtnContent(e.target);
-      removeFromCart(productTitle);
-      setTimeout(() => {
-        location.reload();
-      }, 3000);
+      removeFromCart(productTitle, 'removing the product...', 'show-error');
+      reloadPage(2000);
     });
+  });
+}
+
+// the behavior of the buttons of the cart products
+function cartButtons() {
+  const deleteMsg = 'removing the product...';
+  const purchaseMsg =
+    "Thank you for your purchase! Your order has been received and is being processed. We'll send you a confirmation email with your order details shortly";
+
+  const removeBtns = document.querySelectorAll(
+    '.product .product-purchase .remove-btn'
+  );
+  const purchaseBtns = document.querySelectorAll(
+    '.product .product-purchase .purchase-btn'
+  );
+
+  removeBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const productTitle =
+        e.target.parentElement.previousElementSibling.firstElementChild
+          .textContent;
+      removeFromCart(productTitle, deleteMsg, 'show-error');
+      reloadPage(3000);
+    });
+  });
+
+  purchaseBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const productTitle =
+        e.target.parentElement.previousElementSibling.firstElementChild
+          .textContent;
+      removeFromCart(productTitle, purchaseMsg, 'show-msg');
+      reloadPage(3000);
+    });
+  });
+}
+
+// This code calculates the total value of the (product * quantity) and sets it to the element of (quick-view-total)
+function calcTotalPrice(productPrice) {
+  const quantity = document.querySelector('.quick-view-add #quantity');
+  quantity.addEventListener('keyup', (e) => {
+    let quantityValue = e.target.value;
+    let total = e.target.parentElement.lastElementChild.lastElementChild;
+    if (quantityValue > 1) {
+      total.textContent = `$${Math.round(
+        +quantityValue * +productPrice.slice(1)
+      )}`;
+    } else {
+      total.textContent = productPrice;
+    }
+  });
+}
+
+// this code changes the behavior of (add to cart) button in the quick view button (from add to update and vica verse)
+function btnBehavior(name, price, image) {
+  const addUpdateBtn = document.querySelector('.quick-view-add .add-to-cart');
+  const cartProducts = JSON.parse(localStorage.getItem('cartProducts'));
+  let checker = false;
+
+  for (let x = 0; x < cartProducts.length; x++) {
+    if (cartProducts[x].name === name) {
+      checker = true;
+      break;
+    }
+  }
+
+  if (checker) {
+    showMsg(
+      'Product is actually in the cart, you can update the quantity from here...',
+      'show-msg'
+    );
+    addUpdateBtn.textContent = 'Update In Cart';
+    addUpdateBtn.classList.add('update-in-cart');
+    updateInCart(name, price);
+  } else {
+    showMsg(
+      'Enter the quantity of the product and then add it to the cart...',
+      'show-msg'
+    );
+    addUpdateBtn.textContent = 'Add To Cart';
+    quickAdd(name, price, image);
+  }
+}
+
+// this code is responsible for updating the product in the local storage
+function updateInCart(name, price) {
+  const quantity = document.querySelector('.quick-view-add #quantity');
+  const updateBtn = document.querySelector(
+    '.quick-view-add .add-to-cart.update-in-cart'
+  );
+  const cartProducts = JSON.parse(localStorage.getItem('cartProducts'));
+  console.log(cartProducts);
+
+  updateBtn.addEventListener('click', () => {
+    for (let x = 0; x < cartProducts.length; x++) {
+      if (cartProducts[x].name === name) {
+        cartProducts[x] = {
+          ...cartProducts[x],
+          quantity: quantity.value || 1,
+          total: +quantity.value * +price || price,
+        };
+        break;
+      }
+    }
+    localStorage.setItem('cartProducts', JSON.stringify(cartProducts));
+    showMsg('Changing the product in the cart...', 'show-msg');
+    reloadPage(2000);
+  });
+}
+
+// This code adds the product with the quantity to the cart
+function quickAdd(name, price, image) {
+  const quantity = document.querySelector('.quick-view-add #quantity');
+  const addBtn = document.querySelector(
+    '.quick-view-add .add-to-cart:not(&.update-in-cart)'
+  );
+  const cartProducts = JSON.parse(localStorage.getItem('cartProducts'));
+  const productInCart = {
+    name,
+    price,
+    image,
+  };
+
+  addBtn.addEventListener('click', (e) => {
+    productInCart.quantity = +quantity.value || 1;
+    productInCart.total =
+      Math.round(+quantity.value * +price) || Math.round(+price);
+    addToStorage(productInCart);
+    changeProductStatus(name);
+    updateProducts(name, true);
+    removeFromStorage();
+    showMsg('Adding the product to the cart...', 'show-msg');
+    reloadPage(2000);
   });
 }
 //* End Reusable Functions
@@ -285,6 +425,7 @@ function checkAddToCartBtn() {
     '.product-item .product-item-btns .add-to-cart'
   );
 
+  // Check the products status in the local storage to change the behvior of the button (add to cart)
   for (let x = 0; x < addToCartBtns.length; x++) {
     const btn = addToCartBtns[x];
     const itemId =
@@ -308,6 +449,8 @@ checkAddToCartBtn();
 //TODO: check the cart status and update the products array in local storage
 function updateProducts(name, boolean) {
   const products = JSON.parse(localStorage.getItem('products'));
+
+  // update the products (Added_To_Cart) value when adding or removing products from the cart
   for (let x = 0; x < products.length; x++) {
     if (boolean && products[x].Product_Name === name) {
       products[x] = { ...products[x], Added_To_Cart: true };
@@ -361,6 +504,7 @@ function showQuickView() {
   const quickViewBtn = document.querySelectorAll('.quick-view-btn');
   const quickView = document.querySelector('.quick-view');
   const pageOverlay = document.querySelector('.page-overlay');
+
   // Creating click events for quick view buttons on product pages to display a model structure
   quickViewBtn.forEach((btn) => {
     btn.addEventListener('click', (e) => {
@@ -384,15 +528,18 @@ function showQuickView() {
         </div>
         <div class="quick-view-add">
           <div id="quick-view-price">Price: <span>${productPrice}</span></div>
-          <input type="number" name="amount" id="amount" min="1"/>
+          <input type="number" name="quantity" id="quantity" min="1" placeholder='Quantity'/>
           <button class="add-to-cart">Add To Cart</button>
+          <div id='quick-view-total'>Total: <span>${productPrice}</span></div>
         </div>
       </div>
       `;
       quickView.innerHTML = quickViewContent;
+      calcTotalPrice(productPrice);
       openDropdown(quickView, pageOverlay, 'quick-view-show', 'show-overlay');
+      btnBehavior(productName, productPrice.slice(1), productImage);
 
-      // Add click event on the close button of the quick view window when it is created
+      // View the quick view model when clicking on the button (quick view)
       if (quickView.firstElementChild.lastElementChild) {
         quickViewClose(quickView, pageOverlay);
       }
@@ -406,3 +553,22 @@ function showQuickView() {
     });
   });
 }
+
+//TODO: clear the cart with one click
+function clearCart() {
+  const clearCartBtn = document.querySelector('.clear-cart');
+  if (!JSON.parse(localStorage.getItem('cartProducts')).length) {
+    clearCartBtn.style.display = 'none';
+  } else {
+    clearCartBtn.style.display = 'block';
+  }
+
+  clearCartBtn.addEventListener('click', (e) => {
+    localStorage.clear();
+    addProductsToStorage();
+    localStorage.setItem('cartProducts', JSON.stringify([]));
+    showMsg('The cart is being cleared...', 'show-error');
+    reloadPage(2000);
+  });
+}
+clearCart();
