@@ -19,3 +19,11 @@ This project is a responsive and user-friendly e-commerce store designed to prov
   <br>
 
 ## Screenshots
+
+- **Full page**
+
+![screenshot1](./screenshots/1.png)
+
+- **Cart**
+
+![screenshot2](./screenshots/2.png)

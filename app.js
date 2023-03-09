@@ -572,3 +572,11 @@ function clearCart() {
   });
 }
 clearCart();
+
+//TODO: The Footer functionality
+function footerCopyright() {
+  const currentYear = new Date().getFullYear();
+  const footer = document.getElementById('footer');
+  footer.innerHTML = `© ${currentYear} Shopwise. All Rights Reserved.`;
+}
+footerCopyright();

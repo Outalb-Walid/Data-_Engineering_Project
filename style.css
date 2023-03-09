@@ -918,6 +918,18 @@ a {
 }
 /* End Products */
 
+/* Start Footer */
+#footer {
+  text-align: center;
+  margin-top: 20px;
+  background-color: #333;
+  width: 100%;
+  padding: 30px 0;
+  font-size: 1.5rem;
+  color: #fff;
+}
+/* End Footer */
+
 /* Scroll */
 ::-webkit-scrollbar {
   background-color: #ddd;
