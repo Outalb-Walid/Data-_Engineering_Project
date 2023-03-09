@@ -80,7 +80,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  margin: 20px 40px;
 }
 
 .cart-dropdown .cart-title h3 {
@@ -115,6 +115,8 @@ a {
 @media (width<=687px) {
   .cart-dropdown .clear-cart {
     font-size: 0.9rem;
+    padding: 8px 10px;
+    margin-right: 20px;
   }
 }
 

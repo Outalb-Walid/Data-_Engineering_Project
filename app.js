@@ -331,6 +331,13 @@ function quickAdd(name, price, image) {
     reloadPage(2000);
   });
 }
+
+// This code sets the local storage cart array
+function localStorageCart() {
+  if (!localStorage.getItem('cartProducts')) {
+    localStorage.setItem('cartProducts', JSON.stringify([]));
+  }
+}
 //* End Reusable Functions
 
 //TODO: Add Products To LocalStorage
@@ -383,6 +390,7 @@ function addProductsToStorage() {
   // if the products array is not in local storage, set it to the local storage
   if (!JSON.parse(localStorage.getItem('products'))) {
     localStorage.setItem('products', JSON.stringify(products));
+    localStorageCart();
   }
 }
 addProductsToStorage();
@@ -490,14 +498,6 @@ function cartCounter() {
   cartCounter.textContent = cartProducts.length;
 }
 cartCounter();
-
-//TODO: set the local storage cart array
-function localStorageCart() {
-  if (!localStorage.getItem('cartProducts')) {
-    localStorage.setItem('cartProducts', JSON.stringify([]));
-  }
-}
-localStorageCart();
 
 //TODO: Show Quick View Model for each project
 function showQuickView() {
