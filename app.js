@@ -390,8 +390,8 @@ function addProductsToStorage() {
   // if the products array is not in local storage, set it to the local storage
   if (!JSON.parse(localStorage.getItem('products'))) {
     localStorage.setItem('products', JSON.stringify(products));
-    localStorageCart();
   }
+  localStorageCart();
 }
 addProductsToStorage();
 
@@ -557,7 +557,8 @@ function showQuickView() {
 //TODO: clear the cart with one click
 function clearCart() {
   const clearCartBtn = document.querySelector('.clear-cart');
-  if (!JSON.parse(localStorage.getItem('cartProducts')).length) {
+  const cartProducts = JSON.parse(localStorage.getItem('cartProducts'));
+  if (!cartProducts.length) {
     clearCartBtn.style.display = 'none';
   } else {
     clearCartBtn.style.display = 'block';
