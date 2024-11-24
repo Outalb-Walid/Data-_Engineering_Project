@@ -1,0 +1,33 @@
+[
+  { "name": "Macbook Air", "price": "$999.99", "quantity": 1, "total": 999.99 },
+  {
+    "name": "DYMO LabelWriter",
+    "price": "$189.99",
+    "quantity": 1,
+    "total": 189.99
+  },
+  {
+    "name": "GSKILL TRIDENT Z5 NEO",
+    "price": "$10579.99",
+    "quantity": 1,
+    "total": 10579.99
+  },
+  {
+    "name": "ACER 23.8\" MONITOR",
+    "price": "$350",
+    "quantity": 1,
+    "total": 350.0
+  },
+  {
+    "name": "A4TECH PK-910P",
+    "price": "$29.99",
+    "quantity": 1,
+    "total": 29.99
+  },
+  {
+    "name": "ACER WORKSTATION DESK",
+    "price": "$999.99",
+    "quantity": 1,
+    "total": 999.99
+  }
+]

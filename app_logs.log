@@ -1,0 +1,76 @@
+2024-11-24 03:03:22,980 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.58.21:5000
+2024-11-24 03:03:22,980 - [33mPress CTRL+C to quit[0m
+2024-11-24 03:03:22,984 -  * Restarting with stat
+2024-11-24 03:03:23,731 -  * Debugger is active!
+2024-11-24 03:03:23,739 -  * Debugger PIN: 414-172-224
+2024-11-24 03:03:48,338 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.58.21:5000
+2024-11-24 03:03:48,338 - [33mPress CTRL+C to quit[0m
+2024-11-24 03:03:48,340 -  * Restarting with stat
+2024-11-24 03:03:48,802 -  * Debugger is active!
+2024-11-24 03:03:48,807 -  * Debugger PIN: 414-172-224
+2024-11-24 03:04:02,237 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.58.21:5000
+2024-11-24 03:04:02,237 - [33mPress CTRL+C to quit[0m
+2024-11-24 03:04:02,243 -  * Restarting with stat
+2024-11-24 03:04:02,701 -  * Debugger is active!
+2024-11-24 03:04:02,708 -  * Debugger PIN: 414-172-224
+2024-11-24 03:04:11,096 - 127.0.0.1 - - [24/Nov/2024 03:04:11] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:04:11,435 - 127.0.0.1 - - [24/Nov/2024 03:04:11] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:04:11,748 - 127.0.0.1 - - [24/Nov/2024 03:04:11] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:04:11,749 - 127.0.0.1 - - [24/Nov/2024 03:04:11] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:04:12,755 - 127.0.0.1 - - [24/Nov/2024 03:04:12] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:04:12,755 - 127.0.0.1 - - [24/Nov/2024 03:04:12] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:04:12,771 - 127.0.0.1 - - [24/Nov/2024 03:04:12] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:04:12,777 - 127.0.0.1 - - [24/Nov/2024 03:04:12] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:04:14,269 - 127.0.0.1 - - [24/Nov/2024 03:04:14] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:04:14,571 - 127.0.0.1 - - [24/Nov/2024 03:04:14] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:04:35,352 - 127.0.0.1 - - [24/Nov/2024 03:04:35] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:04:35,352 - 127.0.0.1 - - [24/Nov/2024 03:04:35] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:04:38,707 - 127.0.0.1 - - [24/Nov/2024 03:04:38] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:04:39,028 - 127.0.0.1 - - [24/Nov/2024 03:04:39] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:04:45,523 - 127.0.0.1 - - [24/Nov/2024 03:04:45] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:04:45,523 - 127.0.0.1 - - [24/Nov/2024 03:04:45] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:04:56,482 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.58.21:5000
+2024-11-24 03:04:56,482 - [33mPress CTRL+C to quit[0m
+2024-11-24 03:04:56,484 -  * Restarting with stat
+2024-11-24 03:04:56,946 -  * Debugger is active!
+2024-11-24 03:04:56,953 -  * Debugger PIN: 414-172-224
+2024-11-24 03:05:07,603 - 127.0.0.1 - - [24/Nov/2024 03:05:07] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:05:08,807 - 127.0.0.1 - - [24/Nov/2024 03:05:08] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:05:08,807 - 127.0.0.1 - - [24/Nov/2024 03:05:08] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:05:08,824 - 127.0.0.1 - - [24/Nov/2024 03:05:08] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:05:15,360 - 127.0.0.1 - - [24/Nov/2024 03:05:15] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:05:15,665 - 127.0.0.1 - - [24/Nov/2024 03:05:15] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:05:44,255 - 127.0.0.1 - - [24/Nov/2024 03:05:44] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:05:44,944 - 127.0.0.1 - - [24/Nov/2024 03:05:44] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:05:49,168 - 127.0.0.1 - - [24/Nov/2024 03:05:49] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:05:50,193 - 127.0.0.1 - - [24/Nov/2024 03:05:50] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:05:53,573 - 127.0.0.1 - - [24/Nov/2024 03:05:53] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:05:54,593 - 127.0.0.1 - - [24/Nov/2024 03:05:54] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:06:02,226 - 127.0.0.1 - - [24/Nov/2024 03:06:02] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:06:02,236 - 127.0.0.1 - - [24/Nov/2024 03:06:02] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:06:02,999 - 127.0.0.1 - - [24/Nov/2024 03:06:02] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:06:03,319 - 127.0.0.1 - - [24/Nov/2024 03:06:03] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:06:05,507 - 127.0.0.1 - - [24/Nov/2024 03:06:05] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:06:05,507 - 127.0.0.1 - - [24/Nov/2024 03:06:05] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:06:06,177 - 127.0.0.1 - - [24/Nov/2024 03:06:06] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:06:06,489 - 127.0.0.1 - - [24/Nov/2024 03:06:06] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:06:12,580 - 127.0.0.1 - - [24/Nov/2024 03:06:12] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:06:12,581 - 127.0.0.1 - - [24/Nov/2024 03:06:12] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:06:13,386 - 127.0.0.1 - - [24/Nov/2024 03:06:13] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:06:13,698 - 127.0.0.1 - - [24/Nov/2024 03:06:13] "OPTIONS /logs HTTP/1.1" 200 -
+2024-11-24 03:06:25,525 -  * Detected change in 'C:\\Users\\J A L I D\\Desktop\\DataEnProject\\DataProject\\shopwise-ecommerce\\save_logs.py', reloading
+2024-11-24 03:06:25,576 -  * Detected change in 'c:\\Users\\J A L I D\\Desktop\\DataEnProject\\DataProject\\shopwise-ecommerce\\save_logs.py', reloading
+2024-11-24 03:06:25,664 -  * Restarting with stat
+2024-11-24 03:06:25,674 -  * Restarting with stat

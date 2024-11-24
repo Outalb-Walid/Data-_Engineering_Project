@@ -1,0 +1,19 @@
+2024/11/24 02:06:06 | Macbook Air | 1 | 999.99 | acceuil
+2024/11/24 02:06:07 | DYMO LabelWriter | 1 | 189.99 | acceuil
+2024/11/24 02:06:07 | GSKILL TRIDENT Z5 NEO | 1 | 10579.99 | acceuil
+2024/11/24 02:06:08 | ACER WORKSTATION DESK | 1 | 999.99 | acceuil
+2024/11/24 02:06:09 | Macbook Air | 1 | 999.99 | acceuil
+2024/11/24 02:06:09 | Macbook Air | 1 | 999.99 | acceuil
+2024/11/24 02:06:09 | Macbook Air | 1 | 999.99 | acceuil
+2024/11/24 02:06:09 | Macbook Air | 1 | 999.99 | acceuil
+2024/11/24 02:06:09 | Macbook Air | 1 | 999.99 | acceuil
+2024/11/24 02:06:10 | Macbook Air | 1 | 999.99 | acceuil
+2024/11/24 02:06:10 | Macbook Air | 1 | 999.99 | acceuil
+2024/11/24 02:06:11 | DYMO LabelWriter | 1 | 189.99 | acceuil
+2024/11/24 02:06:11 | DYMO LabelWriter | 1 | 189.99 | acceuil
+2024/11/24 02:06:11 | DYMO LabelWriter | 1 | 189.99 | acceuil
+2024/11/24 02:06:11 | DYMO LabelWriter | 1 | 189.99 | acceuil
+2024/11/24 02:06:20 | Macbook Air | 1 | 999.99 | acceuil
+2024/11/24 02:06:20 | Macbook Air | 1 | 999.99 | acceuil
+2024/11/24 02:06:20 | Macbook Air | 1 | 999.99 | acceuil
+2024/11/24 02:06:20 | Macbook Air | 1 | 999.99 | acceuil
